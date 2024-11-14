@@ -4,7 +4,7 @@
 
 /*====== Variables ======*/
 :root {
-  --yellow: #EAC926;
+  --yellow: black;
   --dark-blue: #03264C;
   --light-blue: #1259c3;
   --gray: #666666;
@@ -29,7 +29,7 @@ body {
 body {
   font-family: var(--base-font-family);
   font-weight: 300;
-  background-color: var(--light-gray);
+  background-color: white;
 }
 
 ul,
@@ -42,7 +42,7 @@ ol {
 a {
   display: inline-block;
   text-decoration: none;
-  color: inherit;
+  color: white;
 }
 
 figure {
@@ -74,6 +74,12 @@ hr {
 .main-header_home-link,
 .main-header_credit-link {
   display: block;
+}
+
+.main-header_home-link {
+  display: flex;  
+  justify-content: center;
+  width: 40%;
 }
 
 .main-header_credit-link {
