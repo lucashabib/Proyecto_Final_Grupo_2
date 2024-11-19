@@ -434,18 +434,19 @@ hr {
   display: inline-block;
   font-size: 1.6em;
   margin: 10px 0;
+  text-align: center;
 }
 
 .form-input {
   display: block;
-  width: 100%;
   height: 45px;
-  margin-bottom: 15px;
   font-size: 1.5em;
   border-radius: 8px;
   border: none;
   border: solid 1px var(--gray);
   padding: 0 15px;
+  width: 500px;
+  margin-bottom: 10px;
 }
 
 .error{
@@ -459,19 +460,26 @@ textarea.form-input {
   padding: 15px;
 }
 
-.registerForm {
-  text-align: center;
-  margin-top: 50px;
-}
-
-.form-input {
-  width: 40%;
-}
-
 .title {
   font-size: 2em;
   font-weight: bold;
   margin-bottom: 20px;
+}
+
+.registerForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.boxForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
 }
 
 /*====== Profile ======*/

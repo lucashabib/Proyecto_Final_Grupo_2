@@ -9,22 +9,25 @@
 				<form class="registerForm" action="/users/register" method="post">
 					<div class="title">Registrate</div>
 					
-					<!-- Name Input -->
-					<div>
-						<label for="name" class="form-label">Nombre</label>
-						<input id="name" class="form-input" type="text" placeholder="name" name="name" />
-					</div>
-
-					<!-- Email Input -->
-					<div>
-						<label for="email" class="form-label">Email</label>
-						<input id="email" class="form-input" type="email" placeholder="email" name="email" />
-					</div>
-
-					<!-- Password Input -->
-					<div>
-						<label for="password" class="form-label">Clave</label>
-						<input id="password" class="form-input" type="password" placeholder="Clave" name="password" />
+					
+					<div class="boxForm">
+						
+						<div>
+							<label for="name" class="form-label">Nombre</label>
+							<input id="name" class="form-input" type="text" placeholder="Nombre" name="name" />
+						</div>
+	
+						<!-- Email Input -->
+						<div>
+							<label for="email" class="form-label">Email</label>
+							<input id="email" class="form-input" type="email" placeholder="Email" name="email" />
+						</div>
+	
+						<!-- Password Input -->
+						<div>
+							<label for="password" class="form-label">Contraseña</label>
+							<input id="password" class="form-input" type="password" placeholder="Contraseña" name="password" />
+						</div>
 					</div>
 
 					<button type="submit" class="submit">Crear</button>
