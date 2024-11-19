@@ -1,4 +1,5 @@
-const db = require('../database/modules/User');
+const db = require('../database/modules');
+const User = db.User;
 //Importar operadores
 
 let userController = {
@@ -10,11 +11,13 @@ let userController = {
         let form = req.body
 
         if (form.name == '' || form.email =='' || form.password == '') {
-          return res.send('Ningún campo puede estar vacio')
+          return res.send('Error. Ningún campo puede estar vacio')
         }
 
-        //No pueden registrarse emails duplicados
-        //if (  )
+        //1. Agregar datos a la base de datos
+        
+
+        //2. Crear condicion de que no se pueda repetir el email
 
         return res.send(form)
       },
