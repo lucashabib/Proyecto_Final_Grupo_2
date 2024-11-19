@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head') %>
+
+	<body>
+		<%- include('./partials/header') %>
+			<main class="container main-container">
+
+				<form class="registerForm" action="/users/register" method="post">
+					<div class="title">Registrate</div>
+					
+					<!-- Name Input -->
+					<div>
+						<label for="name" class="form-label">Nombre</label>
+						<input id="name" class="form-input" type="text" placeholder="name" name="name" />
+					</div>
+
+					<!-- Email Input -->
+					<div>
+						<label for="email" class="form-label">Email</label>
+						<input id="email" class="form-input" type="email" placeholder="email" name="email" />
+					</div>
+
+					<!-- Password Input -->
+					<div>
+						<label for="password" class="form-label">Clave</label>
+						<input id="password" class="form-input" type="password" placeholder="Clave" name="password" />
+					</div>
+
+					<button type="submit" class="submit">Crear</button>
+				</form>
+
+			</main>
+			<%- include('./partials/footer') %>
+	</body>
+
+</html>

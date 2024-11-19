@@ -2,17 +2,18 @@
 //Importar operadores
 
 let userController = {
-    index: function(req, res, next) {
-        res.send('respond with a resource');
+    register: (req, res)=>{
+        return res.render("register")
       },
 
-    register: function(req, res) {
-        return res.send('REGISTRAR USUARIO')
+      processRegister: (req, res) => {
+        return res.render("register")
       },
 
-    login: function(req, res) {
-        return res.send('INGRESAR USUARIO')
-      }
+    login: (req, res) => {
+        return res.render('login')
+      },
+
 }
 
 module.exports = userController;
