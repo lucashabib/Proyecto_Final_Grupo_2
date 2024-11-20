@@ -5,7 +5,10 @@ const Product = db.Product;
 
 const productController = {
     list: (req, res) => {
-        res.render('products/list', { Product });
+        db.Product.findAll()
+        .then(function (result) {
+            return res.send(result)
+        })
     },
     mostrarProducto: (req, res) => {
         if (!req.session || !req.session.user) {
