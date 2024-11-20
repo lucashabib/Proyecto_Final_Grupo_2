@@ -1,16 +1,29 @@
 //Importar base de datos
+const db = require('../database/models/Product');
 //Importar operadores
+const Product = db.Product;
 
-let productController = {
+const productController = {
     list: (req, res) => {
-        return res.render("Lista")
+        res.render('products/list', { Product });
+    },
+    mostrarProducto: (req, res) => {
+        if (!req.session || !req.session.user) {
+            return res.redirect('/login');
+        }
+        res.render('cargarProducto');
+    },
+
+    procesarProducto: (req, res) => {
+        if (!req.session || !req.session.user) {
+            return res.redirect('/login');
+        }
+        const {imagen, nombre, descripcion} = req.body;
     },
 
     detalle: (req, res) => {
-        return res.render("Detalle")
-    },
 
-    list: (req, res) => {
-        return res.render("Lista")
-    }
+    },
 }
+
+module.exports = productController;
