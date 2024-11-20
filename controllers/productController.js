@@ -25,7 +25,15 @@ const productController = {
     },
 
     detalle: (req, res) => {
+        let id = req.params.id
 
+        db.Product.findByPk(id)
+        .then(function(result) {
+            return res.send(result)
+        })
+        .catch(function(err) {
+            return console.log(err);
+        })
     },
 }
 
