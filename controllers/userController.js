@@ -1,3 +1,4 @@
+const bcrypt = require('bcryptjs');
 const db = require('../database/models');
 const User = db.User;
 
@@ -26,11 +27,13 @@ let userController = {
                 if (user) {
                     return res.send("Error: El email ya está registrado.");
                 }
-    
+                
+                let contraEncriptada = bcrypt.hashSync(password, 10);
+
                 return User.create({
                     nombre: name,
                     email: email,
-                    contrasena: password 
+                    contrasena: contraEncriptada 
                 })
                 .then(() => {
                     res.redirect('/');
