@@ -4,12 +4,7 @@ const db = require('../database/models/Product');
 const Product = db.Product;
 
 const productController = {
-    index: (req, res) => {
-        db.Product.findAll()
-            .then(function (result) {
-                return res.send(result)
-            })
-    },
+    /*
     mostrarProducto: (req, res) => {
         if (!req.session || !req.session.user) {
             return res.redirect('/login');
@@ -22,6 +17,22 @@ const productController = {
             return res.redirect('/login');
         }
         const { imagen, nombre, descripcion } = req.body;
+    },
+*/
+    show: function(req, res) {
+        return res.render('product-add')
+    },
+
+    store: (req, res) => {
+        let producto = req.body;
+
+         db.Product.create(producto) //Habria que cambiar el nombre con el que va a tener mi base de datos
+            .then(function(results) {
+                return res.redirect('/products')
+            })
+            .catch(function(err) {
+                console.log(err);
+            })
     },
 
     detalle: (req, res) => {

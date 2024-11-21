@@ -5,16 +5,19 @@ var router = express.Router();
 let productController = require('../controllers/productController');
 
 //RUTAS PRODUCTS
-router.get('/', productController.index)
 
-router.get('/', productController.mostrarProducto);
+//router.get('/', productController.mostrarProducto);
 
-router.post('/', productController.procesarProducto);
+//router.post('/', productController.procesarProducto);
 
-router.get('/detail/:id', productController.detalle);
+router.get('/products', productController.show);
+router.post('/products', productController.store);
 
-router.get('/new', productController.nueva);
 
-router.get('/search', productController.search);
+//router.get('/detail/:id', productController.detalle);
+
+//router.get('/new', productController.nueva);
+
+//router.get('/search', productController.search);
 
 module.exports = router;
