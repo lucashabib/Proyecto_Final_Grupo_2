@@ -4,6 +4,11 @@ const db = require('../database/models/Product');
 const Product = db.Product;
 
 const productController = {
+
+    show: function(req, res) {
+        return res.render('product-add')
+    },
+
     /*
     mostrarProducto: (req, res) => {
         if (!req.session || !req.session.user) {
@@ -19,10 +24,6 @@ const productController = {
         const { imagen, nombre, descripcion } = req.body;
     },
 */
-    show: function(req, res) {
-        return res.render('product-add')
-    },
-
     store: (req, res) => {
         let producto = req.body;
 

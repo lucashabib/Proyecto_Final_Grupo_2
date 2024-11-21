@@ -11,7 +11,7 @@ let productController = require('../controllers/productController');
 //router.post('/', productController.procesarProducto);
 
 router.get('/products', productController.show);
-router.post('/products', productController.store);
+router.post('/add', productController.store);
 
 
 //router.get('/detail/:id', productController.detalle);
