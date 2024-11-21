@@ -1,6 +1,5 @@
-module.exports = function(sequelize, DataTypes) {
-    let alias = "User";
-    let cols = {
+module.exports = (sequelize, DataTypes) => {
+    const User = sequelize.define('User', {
         id: {
             autoIncrement: true,
             primaryKey: true,
@@ -15,13 +14,12 @@ module.exports = function(sequelize, DataTypes) {
         contrasena: {
             type: DataTypes.STRING
         },
-    };
-
-    let config = {
+    }, {
         tableName: "users",
         timestamps: false,
         underscored: true
-    };
+    });
 
-    return sequelize.define(alias, cols, config);
+    return User;
 };
+

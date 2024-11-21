@@ -1,4 +1,4 @@
-const db = require('../database/models/User');
+const db = require('../database/models');
 const User = db.User;
 
 let userController = {
@@ -8,29 +8,41 @@ let userController = {
 
     processRegister: (req, res) => {
         let { name, email, password } = req.body;
-
-        if (!name || !email || !password) {
-            return res.send('Error. Ningún campo puede estar vacío');
+    
+        if (!email) {
+            return res.send("Error: El email es obligatorio.");
         }
-
+    
+        if (!name) {
+            return res.send("Error: El nombre de usuario es obligatorio.");
+        }
+    
+        if (!password) {
+            return res.send("Error: La contraseña es obligatoria.");
+        }
+    
         User.findOne({ where: { email: email } })
             .then(user => {
                 if (user) {
-                    return res.send('Error. Este email ya está registrado');
+                    return res.send("Error: El email ya está registrado.");
                 }
-
+    
                 return User.create({
                     nombre: name,
                     email: email,
-                    contrasena: password
+                    contrasena: password 
+                })
+                .then(() => {
+                    res.redirect('/');
+                })
+                .catch(err => {
+                    console.error(err);
+                    res.send("Ocurrió un error al procesar el registro.");
                 });
             })
-            .then(() => {
-                return res.send('Usuario registrado con éxito');
-            })
-            .catch(error => {
-                console.error(error);
-                return res.send('Ocurrió un error al procesar la solicitud');
+            .catch(err => {
+                console.error(err);
+                res.send("Ocurrió un error al verificar el email.");
             });
     },
 
