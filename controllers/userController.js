@@ -43,15 +43,47 @@ let userController = {
                     res.send("Ocurrió un error al procesar el registro.");
                 });
             })
-            .catch(err => {
-                console.error(err);
-                res.send("Ocurrió un error al verificar el email.");
+            .catch((err) => {
+                return console.log(err);
+                
             });
     },
 
     login: (req, res) => {
         return res.render('login');
     },
+    processLogin: (req, res) => {
+        let form = req.body;
+
+        let filtro = {
+            where:{
+                email: form.email
+            }
+        }
+
+        db.User.findOne(filtro)
+        .then((result) => {
+
+            if (result != undefined) {
+
+                let validarClave = bcrypt.compareSync( form.password , result.contrasena);
+                
+                if (validarClave) {
+                    req.session.user = result;
+                    return res.redirect("/");
+
+                } else {
+                    return res.send("Clave incorrecta");
+                }
+
+            } else {
+                return res.send("No se encontro un usuario");
+            }
+        }).catch((err) => {
+            return console.log(err);
+            
+        });
+    }
 };
 
 module.exports = userController;

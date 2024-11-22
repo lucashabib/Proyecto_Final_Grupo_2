@@ -1,22 +1,43 @@
 <!DOCTYPE html>
 <html lang="es">
-	<%- include('./partials/head')  %>
-<body>
-	<%- include('./partials/header')  %>
+<%- include('./partials/head') %>
 
-	<!-- Novedades -->
-	<div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">Ingresar</h2>
-			</div>
+	<body>
 
-			<h2 class="col-12"> //////////////////////////////// <br>
-				Eliminá está etiqueta h2 y creá en su lugar el formulario de login <br>
-			////////////////</h2>
+		<% if (locals.user != undefined) { %>
+			<%- include('./partials/headerLogin') %>
+		   <% } else { %>
+			<%- include('./partials/header') %>
+		  <% } %>
+
+			<!-- Novedades -->
+			<main class="container main-container">
+
+				<form class="registerForm" action="/users/login" method="post">
+					<div class="title">Inicia Sesión</div>
 
 
-			<%- include('./partials/footer')  %>
-</body>
+					<div class="boxForm">
+
+						<!-- Email Input -->
+						<div>
+							<label for="email" class="form-label">Email</label>
+							<input id="email" class="form-input" type="email" placeholder="Email" name="email" />
+						</div>
+
+						<!-- Password Input -->
+						<div>
+							<label for="password" class="form-label">Contraseña</label>
+							<input id="password" class="form-input" type="password" placeholder="Contraseña"
+								name="password" />
+						</div>
+					</div>
+
+					<button type="submit" class="submit">Iniciar sesión</button>
+
+				</form>
+			</main>
+			<%- include('./partials/footer') %>
+	</body>
 
 </html>

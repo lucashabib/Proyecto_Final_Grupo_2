@@ -3,7 +3,13 @@
 <%- include('./partials/head') %>
 
 	<body>
-		<%- include('./partials/header') %>
+
+		<% if (locals.user != undefined) { %>
+			<%- include('./partials/headerLogin') %>
+		   <% } else { %>
+			<%- include('./partials/header') %>
+		  <% } %>
+
 			<main class="container main-container">
 
 				<form class="registerForm" action="/users/register" method="post">
