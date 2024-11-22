@@ -138,16 +138,38 @@ hr {
   font-size: 1.5em;
 }
 
+.saludo{
+  color: white;
+}
+
 .logout{
   background: transparent;
   border: 0px;
   cursor: pointer;
   font-size: 1em;
+  color: white;
+  
 }
 
 .logout:hover{
   color: #1259c3;
 }
+
+.main-navbar{
+  list-style-type: none;
+  color: white;
+}
+
+.main-navbarLogin{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+  color: white;
+  font-size: 15px;
+}
+
 
 .left-navbar a,
 .right-navbar a {
@@ -480,6 +502,11 @@ textarea.form-input {
   flex-direction: column;
   align-items: center;
   width: 300px;
+}
+
+.recordarme {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 /*====== Profile ======*/

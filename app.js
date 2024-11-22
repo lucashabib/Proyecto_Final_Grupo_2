@@ -25,7 +25,12 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }))
-
+app.use(function(req, res, next) {
+  if (req.session.user) {
+      res.locals.user = req.session.user;
+  }
+  return next();
+});
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
@@ -35,13 +40,6 @@ app.use('/products', productsRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
-});
-//Configuro session
-app.use(function(req, res, next) {
-  if (req.session.user) {
-      res.locals.user = req.session.user;
-  }
-  return next();
 });
 
 

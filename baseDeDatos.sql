@@ -14,4 +14,12 @@ create table users (
     deletedAt	TIMESTAMP	DEFAULT	CURRENT_TIMESTAMP
 );
 
--- FALTA CREAR LA TABLA DE PRODUCTS Y LE AGREGAN LOS VALORES EN database/models
+INSERT INTO users (nombre, email, contrasena) VALUES 
+('Pedro', 'pedro@gmail.com', 'hashed1_ejemplo'),
+('Lucas', 'lucas@gmail.com', 'hashed2_ejemplo'),
+('Gero', 'gero@gmail.com', 'hashed3_ejemplo'),
+('Juan', 'juan@gmail.com', 'hashed4_ejemplo'),
+('Carlos', 'carlos@gmail.com', 'hashed5_ejemplo');
+
+
+-- FALTA CREAR LA TABLA DE PRODUCTS Y LE AGREGAN LOS VALORES EN database/models CREARLE 5 VALORES POR DEFAULT (ES CONSIGNA DEL TP QUE YA TENGA 5 VALORES)

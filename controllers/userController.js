@@ -36,7 +36,7 @@ let userController = {
                     contrasena: contraEncriptada 
                 })
                 .then(() => {
-                    res.redirect('/');
+                    res.redirect('/users/login');
                 })
                 .catch(err => {
                     console.error(err);
@@ -50,6 +50,10 @@ let userController = {
     },
 
     login: (req, res) => {
+        if (req.session.user != undefined) {
+            return res.redirect('/');
+        }
+
         return res.render('login');
     },
     processLogin: (req, res) => {
@@ -70,6 +74,11 @@ let userController = {
                 
                 if (validarClave) {
                     req.session.user = result;
+
+                    if (form.recordarme === 'true') {
+                        res.cookie('user', result.id, { maxAge: 1000 * 60 * 5, httpOnly: true });
+                    }
+
                     return res.redirect("/");
 
                 } else {
