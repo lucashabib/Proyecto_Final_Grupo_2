@@ -1,24 +1,27 @@
-module.exports = (sequelize, DataTypes) => {
-    const User = sequelize.define('User', {
+module.exports = (sequelize, dataTypes) => {
+    let alias = "User";
+    let cols = {
         id: {
             autoIncrement: true,
             primaryKey: true,
-            type: DataTypes.INTEGER
+            type: dataTypes.INTEGER
         },
         nombre: {
-            type: DataTypes.STRING
+            type: dataTypes.STRING
         },
         email: {
-            type: DataTypes.STRING
+            type: dataTypes.STRING
         },
         contrasena: {
-            type: DataTypes.STRING
-        },
-    }, {
+            type: dataTypes.STRING
+        }
+    };
+    let config = {
         tableName: "users",
         timestamps: false,
         underscored: true
-    });
+    }
+    const User = sequelize.define(alias, cols, config);
 
     User.associate = function(models) {
         User.hasMany(models.Product, {
@@ -28,4 +31,4 @@ module.exports = (sequelize, DataTypes) => {
     }
 
     return User;
-};
+}
