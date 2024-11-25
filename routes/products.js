@@ -6,18 +6,12 @@ let productController = require('../controllers/productController');
 
 //RUTAS PRODUCTS
 
-//router.get('/', productController.mostrarProducto);
+router.get('/', productController.show);
 
-//router.post('/', productController.procesarProducto);
+router.get('/add', productController.add);
+router.post('/add', productController.procesarProducto);
+router.post('/store', productController.store);
 
-router.get('/products', productController.show);
-router.post('/add', productController.store);
-
-
-//router.get('/detail/:id', productController.detalle);
-
-//router.get('/new', productController.nueva);
-
-//router.get('/search', productController.search);
+router.get('/search', productController.search);
 
 module.exports = router;
