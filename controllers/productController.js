@@ -28,7 +28,7 @@ const productController = {
 
     procesarProducto: (req, res) => {
 
-        let { imagen, nombre, descripcion } = req.body
+        let { imagen, nombre, descripcion, precio } = req.body
         if (!imagen) {
             return res.send("Error: La imagen es obligatoria")
         }
