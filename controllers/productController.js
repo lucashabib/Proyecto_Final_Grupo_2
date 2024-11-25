@@ -50,7 +50,7 @@ const productController = {
             userId: req.session.user.id
         })
          .then (function() {
-            return res.redirect('/products');   // Redirigir al listado de productos u otra página
+            return res.redirect('/products/');   // Redirigir al listado de productos u otra página
         })
         .catch(function (err) {
             return console.log(err);
