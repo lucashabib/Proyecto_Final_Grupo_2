@@ -22,9 +22,9 @@
 								<img src="/images/products/<%= results[i].imagen %>" alt="<%=results[i].nombre%>">
 							</figure>     
 							<article class="products-box-data">
-								<h2>Producto: <%=results[i].nombre%></h2>
-								<p>Descripción: <%= results[i].descripcion %></p>
-								<p><a href="/users/profile/<%= results[i].user.id %>"> Usuario: <%= results[i].user.nombre %> </a></p>
+								<h2 class="descripcion_data">Producto: <%=results[i].nombre%></h2>
+								<p class="descripcion_data">Descripción: <%= results[i].descripcion %></p>
+								<p><a href="/users/profile/<%= results[i].user.id %>" class="descripcion_data"> Usuario: <%= results[i].user.nombre %> </a></p>
 							</article>
 						</a>
 					</section>

@@ -230,6 +230,7 @@ hr {
   font-size: 2.4em;
   font-weight: 300;
   margin: 0;
+  color: red;
 }
 
 .product-box_data span {
@@ -269,6 +270,14 @@ hr {
 
 .noproducts {
   text-align: center
+}
+
+.products-box-data {
+  background-color: red;
+}
+
+.descripcion_data {
+  color: black;
 }
 
 .product-box:hover {
