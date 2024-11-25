@@ -28,26 +28,29 @@ const productController = {
 
     procesarProducto: (req, res) => {
 
-        let { imagen, name, descripcion } = req.body
+        let { imagen, nombre, descripcion } = req.body
         if (!imagen) {
             return res.send("Error: La imagen es obligatoria")
         }
-        if (!name) {
+        if (!nombre) {
             return res.send("Error: El nombre es obligatorio")
         }
         if (!descripcion) {
             return res.send("Error: La descrpcion es obligatoria")
+        }
+        if (!precio) {
+            return res.send("Error: El precio es obligatorio")
         }
 
         db.Product.create ({
             imagen: imagen,
             nombre: nombre,
             descripcion: descripcion,
+            precio: precio,
             userId: req.session.user.id
         })
-         .then(() => {
-            // Redirigir al listado de productos u otra página
-            return res.redirect('/products');
+         .then (function() {
+            return res.redirect('/products');   // Redirigir al listado de productos u otra página
         })
         .catch(function (err) {
             return console.log(err);
