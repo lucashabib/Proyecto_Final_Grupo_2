@@ -28,11 +28,11 @@ const productController = {
 
     procesarProducto: (req, res) => {
 
-        let { imagen, name, descripcion } = req.body
+        let { imagen, nombre, descripcion } = req.body
         if (!imagen) {
             return res.send("Error: La imagen es obligatoria")
         }
-        if (!name) {
+        if (!nombre) {
             return res.send("Error: El nombre es obligatorio")
         }
         if (!descripcion) {
