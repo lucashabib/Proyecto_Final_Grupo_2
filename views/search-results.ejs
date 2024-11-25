@@ -19,12 +19,12 @@
 					<section class="products-box">
 						<a href="/catalogo/detalle<%= results[i].id%>">
 							<figure class="products-box-img">                        <!--ver nombre con la base de datos-->
-								<img src="/Proyecto_Final_Grupo_2/public/images/products <%= results[i].imagen %>" alt="<%=results[i].nombre%>">
-							</figure>     <!--Es lo mismo que: /images/products/?-->
+								<img src="/images/products/<%= results[i].imagen %>" alt="<%=results[i].nombre%>">
+							</figure>     
 							<article class="products-box-data">
 								<h2>Producto: <%=results[i].nombre%></h2>
-								<p>Descripcion: <%= results[i].productDescription %></p>
-								<p><a href="/users/profile/<% results[i].id %>"> Usuario: <%= results[i].id %> </a></p>
+								<p>Descripción: <%= results[i].descripcion %></p>
+								<p><a href="/users/profile/<%= results[i].user.id %>"> Usuario: <%= results[i].user.nombre %> </a></p>
 							</article>
 						</a>
 					</section>
