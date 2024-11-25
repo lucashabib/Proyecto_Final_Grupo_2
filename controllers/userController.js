@@ -4,6 +4,10 @@ const User = db.User;
 
 let userController = {
     register: (req, res) => {
+        if (req.session.user) {
+            return res.redirect('/');
+        }
+
         return res.render("register");
     },
 
@@ -92,6 +96,13 @@ let userController = {
             return console.log(err);
             
         });
+    }, perfil: (req, res) => {
+        if (!req.session.user) {
+            return res.redirect('/users/login');
+        }
+        
+        let result = req.session.user; 
+        return res.render("miPerfil", { result });
     }
 };
 
