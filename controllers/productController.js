@@ -24,7 +24,7 @@ const productController = {
         const { imagen, nombre, descripcion } = req.body;
     },
 */
-    store: (req, res) => {
+    store: (req, res) => { //hola
         let producto = req.body;
 
          db.Product.create(producto) //Habria que cambiar el nombre con el que va a tener mi base de datos
