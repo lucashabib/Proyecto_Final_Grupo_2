@@ -103,7 +103,14 @@ let userController = {
         
         let result = req.session.user; 
         return res.render("miPerfil", { result });
-    }
+    },
+    logout: (req, res) => {
+        if (!req.session.user) {
+            return res.redirect('/users/login');
+        }
+        req.session.destroy()
+        return res.redirect('/');
+    }
 };
 
 module.exports = userController;
