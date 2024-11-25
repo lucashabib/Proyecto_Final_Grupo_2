@@ -40,11 +40,11 @@ let userController = {
                     contrasena: contraEncriptada 
                 })
                 .then(() => {
-                    res.redirect('/users/login');
+                    return res.redirect('/users/login');
                 })
                 .catch(err => {
                     console.error(err);
-                    res.send("Ocurrió un error al procesar el registro.");
+                    return res.send("Ocurrió un error al procesar el registro.");
                 });
             })
             .catch((err) => {
