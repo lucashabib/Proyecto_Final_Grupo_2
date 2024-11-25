@@ -3,10 +3,10 @@
 	<%- include('./partials/head')  %>
 <body>
 	<% if (locals.user != undefined) { %>
-		<%- include('./partials/headerLogin') %>
-	   <% } else { %>
+		<%- include('./partials/headerLogueado') %>
+	<% } else { %>
 		<%- include('./partials/header') %>
-	  <% } %>
+	<% } %>
 
 	<!-- product detail -->
 	<div class="container products-wrapper">
