@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+	<%- include('./partials/head')  %>
+    
+<body>
+	<% if (locals.user != undefined) { %>
+		<%- include('./partials/headerLogin') %>
+	<% } else { %>
+		<%- include('./partials/header') %>
+	<% } %>
+
+    <main class="infoPerfilUsuario">
+      <div class="main-title">
+        <p>Información del usuario</p>
+      </div>
+      <div class="info-usuario">
+        <img src="/images/users/default-image.png" alt="foto del usuario" class="foto-perfil">
+        <p>Nombre: <%= result.nombre %> </p>
+        <p>Email: <%= result.email %></p>
+      </div>
+    </main>
+    
+    </body>
+
+    <%- include('./partials/footer')  %>
+</html>
