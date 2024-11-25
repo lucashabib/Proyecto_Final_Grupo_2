@@ -55,6 +55,7 @@ const productController = {
 
     search: (req, res) => {
         let qs = req.query.search;
+        return res.send(qs)
         
         let filtro = {
             where: [{ title: { [Op.like]: `%${qs}%` } }],
