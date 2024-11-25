@@ -20,6 +20,19 @@ const productController = {
         });
     },    
 
+    allProducts: function (req, res) {
+        db.Product.findAll({
+            order: [['createdAt', 'DESC']],
+            include: [{ model: db.User, as: 'user' }] 
+        })
+        .then(function (products) {
+            res.render('all-products', { products: products });         })
+        .catch(function (err) {
+            console.log(err);
+            res.render('all-products', { products: [] }); 
+        });
+    },    
+
     mostrarProducto: (req, res) => {
         if (!req.session || !req.session.user) {
             return res.redirect('/users/login');

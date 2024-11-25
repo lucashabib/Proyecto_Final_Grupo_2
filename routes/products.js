@@ -6,7 +6,7 @@ let productController = require('../controllers/productController');
 
 //RUTAS PRODUCTS
 
-router.get('/', productController.show);
+router.get('/', productController.allProducts);
 
 router.get('/add', productController.add);
 router.post('/add', productController.procesarProducto);
