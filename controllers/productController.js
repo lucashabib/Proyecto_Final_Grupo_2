@@ -1,6 +1,4 @@
-//Importar base de datos
 const db = require('../database/models');
-//Importar operadores
 const Product = db.Product;
 
 const Op = db.Sequelize.Op
@@ -8,9 +6,19 @@ const Op = db.Sequelize.Op
 const productController = {
 
     show: function (req, res) {
-        return res.render('index')
-    },
-
+        db.Product.findAll({
+            limit: 4,
+            order: [['createdAt', 'DESC']],
+            include: [{ model: db.User, as: 'user' }]
+        })
+        .then(function (products) {
+            res.render('index', { products: products });
+        })
+        .catch(function (err) {
+            console.log(err);
+            res.render('index', { products: [] });
+        });
+    },    
 
     mostrarProducto: (req, res) => {
         if (!req.session || !req.session.user) {
@@ -79,23 +87,22 @@ const productController = {
     },
 
     detalle: (req, res) => {
-        let id = req.params.id
-
-        db.Product.findByPk(id, { include: [{ model: db.User, as: 'User' }] }) //ver con association
-
-            .then(function (result) {
-                if (result) {
-                    return res.render('product', { product: result })
-                } else {
-                    return res.send('Producto no encontrado');
-                }
-            })
-            .catch(function (err) {
+        let id = req.params.id;
+    
+        db.Product.findByPk(id, {
+            include: [{ model: db.User, as: 'user' }]
+        })
+        .then (function (product) {
+            if (product) {
+                res.render('product', { product });
+            } else {
+                res.send('Producto no encontrado');
+            }
+        })
+        .catch(function (err) {
                 return console.log(err);
             })
-    }, 
-
-
+        }
 }
 
 module.exports = productController;

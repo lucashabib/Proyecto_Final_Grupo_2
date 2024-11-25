@@ -12,7 +12,7 @@ router.get('/add', productController.add);
 router.post('/add', productController.procesarProducto);
 router.post('/store', productController.store);
 
-router.get('/detalle', productController.detalle)
+router.get('/detalle/:id', productController.detalle);
 
 router.get('/search', productController.search);
 
