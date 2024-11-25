@@ -15,7 +15,11 @@
 			<img src="/images/products/<%= product.imagen %>" alt="<%= product.nombre %>" class="product-detail-img">
 			<p>Precio: <%= product.precio %></p>
 			<p>Descripción: <%= product.descripcion %></p>
-			<p>Usuario: <%= product.user.nombre %></p>
+			<p>
+				<a href="/users/profile/<%= product.user.id %>" class="descripcion_data" style="text-decoration: underline;">
+					Usuario: <%= product.user.nombre %>
+				</a>
+			</p>
 		</div>
 	</div>
 	<!-- /product detail -->

@@ -30,7 +30,7 @@ CREATE TABLE products (
     nombre			VARCHAR(100)	NOT NULL,
     precio			VARCHAR(100)	NOT NULL,
     descripcion		VARCHAR(300)	NOT NULL,
-    imagen			VARCHAR(300)	NOT NULL,
+    imagen			VARCHAR(500)	NOT NULL,
     userId                  INT     UNSIGNED    NOT NULL,
     
     FOREIGN KEY (userId) REFERENCES users(id),
