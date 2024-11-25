@@ -510,10 +510,19 @@ textarea.form-input {
 }
 
 /*====== Profile ======*/
+.infoPerfilUsuario{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .info-usuario{
   border-bottom: 1px solid #ccc;
   padding-bottom: 30px;
   font-size: 16px;
+  justify-content: center;
+  align-items: center;
 }
 
 .foto-perfil{

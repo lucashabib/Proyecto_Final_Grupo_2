@@ -79,7 +79,7 @@ const productController = {
     detalle: (req, res) => {
         let id = req.params.id
 
-        db.Product.findByPk(id, { include: [{ model: db.User, as: 'user' }] }) //ver con association
+        db.Product.findByPk(id, { include: [{ model: db.User, as: 'usuarios' }] }) //ver con association
 
             .then(function (result) {
                 if (result) {
