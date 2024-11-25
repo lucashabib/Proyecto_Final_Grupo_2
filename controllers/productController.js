@@ -57,14 +57,15 @@ const productController = {
         let qs = req.query.search;
         
         let filtro = {
-            where: [{ title: { [Op.like]: `%${qs}%` } }],
-            order: [[ 'createAt', 'DESC']], 
-            include: [{ model: db.User, as: 'User' }]
+            where: [{ nombre: { [Op.like]: `%${qs}%` } }],
+            order: [[ 'createdAt', 'DESC']], 
+            //include: [{ model: db.User, as: 'User' }]
+            include: [ { association: "User"} ]
         };
 
         db.Product.findAll(filtro)
             .then(function (results) {
-                return res.send(results)
+               // return res.send(results)
                 if (results.length > 0) {
                     return res.render('search-results', { results: results })
                 } else {
@@ -79,7 +80,7 @@ const productController = {
     detalle: (req, res) => {
         let id = req.params.id
 
-        db.Product.findByPk(id, { include: [{ model: db.User, as: 'usuarios' }] }) //ver con association
+        db.Product.findByPk(id, { include: [{ model: db.User, as: 'User' }] }) //ver con association
 
             .then(function (result) {
                 if (result) {
