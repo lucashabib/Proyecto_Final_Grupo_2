@@ -40,11 +40,11 @@ let userController = {
                     contrasena: contraEncriptada 
                 })
                 .then(() => {
-                    res.redirect('/users/login');
+                    return res.redirect('/users/login');
                 })
                 .catch(err => {
                     console.error(err);
-                    res.send("Ocurrió un error al procesar el registro.");
+                    return res.send("Ocurrió un error al procesar el registro.");
                 });
             })
             .catch((err) => {
@@ -110,7 +110,26 @@ let userController = {
         }
         req.session.destroy()
         return res.redirect('/');
-    }
+    }, profile: (req, res) => {
+        let id = req.params.id
+
+        let filtro = {
+            where: [{ id: id}],
+        };
+
+        db.User.findOne(filtro)
+        .then((result) => {
+            if (result) {
+                return res.render('infoPerfil', { result });
+            } else {
+                return res.send('Usuario no encontrado');
+            }
+        }).catch((err) => {
+            return console.log(err);
+            
+        });
+
+    }
 };
 
 module.exports = userController;

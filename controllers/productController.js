@@ -36,17 +36,33 @@ const productController = {
 
     procesarProducto: (req, res) => {
 
-        let { imagen, name, texto } = req.body
-
+        let { imagen, nombre, descripcion, precio } = req.body
         if (!imagen) {
-            return res.send("Error: Este campo es obligatorio")
+            return res.send("Error: La imagen es obligatoria")
         }
-        if (!name) {
-            return res.send("Error: Este campo es obligatorio")
+        if (!nombre) {
+            return res.send("Error: El nombre es obligatorio")
         }
-        if (!texto) {
-            return res.send("Error: Este campo es obligatorio")
+        if (!descripcion) {
+            return res.send("Error: La descrpcion es obligatoria")
         }
+        if (!precio) {
+            return res.send("Error: El precio es obligatorio")
+        }
+
+        db.Product.create ({
+            imagen: imagen,
+            nombre: nombre,
+            descripcion: descripcion,
+            precio: precio,
+            userId: req.session.user.id
+        })
+         .then (function() {
+            return res.redirect('/products/');   // Redirigir al listado de productos u otra página
+        })
+        .catch(function (err) {
+            return console.log(err);
+        })
     },
 
     store: (req, res) => {
@@ -57,7 +73,7 @@ const productController = {
                 return res.redirect('/products')
             })
             .catch(function (err) {
-                console.log(err);
+                return console.log(err);
             })
     },
 
