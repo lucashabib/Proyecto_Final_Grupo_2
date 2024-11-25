@@ -61,7 +61,7 @@ const productController = {
             where: [{ nombre: { [Op.like]: `%${qs}%` } }],
             order: [[ 'createdAt', 'DESC']], 
             //include: [{ model: db.User, as: 'User' }]
-            include: [ { association: "User"} ]
+            include: [ { association: "user"} ]
         };
 
         db.Product.findAll(filtro)
@@ -70,7 +70,7 @@ const productController = {
                 if (results.length > 0) {
                     return res.render('search-results', { results: results })
                 } else {
-                    return res.send('No haay resultados para su criterio de busqueda')
+                    return res.send('No hay resultados para su criterio de busqueda')
                 }
             })
             .catch(function (err) {

@@ -24,14 +24,14 @@ module.exports = (sequelize, dataTypes) => {
     };
     let config = {
         tableName: "products",
-        timestamps: false,
-        underscored: true
+        timestamps: true,
+        underscored: false
     }
     const Product = sequelize.define(alias, cols, config);
 
     Product.associate = function(models) {
         Product.belongsTo(models.User, {
-            as: "usuarios",
+            as: "user",
             foreignKey: "userId"
         })
     }
