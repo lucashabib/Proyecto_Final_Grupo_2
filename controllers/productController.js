@@ -1,5 +1,6 @@
 //Importar base de datos
 const db = require('../database/models/Product');
+
 //Importar operadores
 const Product = db.Product;
 

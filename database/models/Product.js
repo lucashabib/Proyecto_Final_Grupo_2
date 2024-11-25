@@ -1,7 +1,5 @@
-const { sequelize } = require(".");
-
 module.exports = (sequelize, dataTypes) => {
-    let alias = "Peliculas";
+    let alias = "Product";
     let cols = {
         productId: {
             type: dataTypes.INTEGER,
@@ -15,6 +13,9 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING
         },
         productDescripcion: {
+            type: dataTypes.STRING
+        },
+        productImagen: {
             type: dataTypes.STRING
         },
         userId: {

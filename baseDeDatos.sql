@@ -30,6 +30,7 @@ CREATE TABLE products (
     productNombre			VARCHAR(100)	NOT NULL,
     productPrecio			VARCHAR(100)	NOT NULL,
     productDescripcion		VARCHAR(300)	NOT NULL,
+    productImagen           VARCHAR(300)    NOT NULL,
     userId                  INT     UNSIGNED    NOT NULL,
     
     FOREIGN KEY (userId) REFERENCES users(id),
@@ -40,9 +41,9 @@ CREATE TABLE products (
     deletedAt	TIMESTAMP	DEFAULT	CURRENT_TIMESTAMP
 );
 
-INSERT INTO products (productNombre, productPrecio, productDescripcion, userId) VALUES
-('River Plate Local 1986', '$60.000', 'Remera Local del Club Atletico River Plate del año 1986', 2),
-('Boca Juniors Local 2003', '$60.000', 'Remera Local del Club Atletico Boca Juniors del año 2003', 1),
-('Barcelona Visitante 2011', '$55.000', 'Remera Visitante del Fútbol Club Barcelona del año 2011', 3),
-('Bayern Munich Alternativa 1998', '$70.000', 'Remera Alternativa del Fußball-Club Bayern München del año 1998', 2),
-('Real Madrid Local 2000', '$65.000', 'Remera Local del Real Madrid Club de Fútbol del año 2000', 5);
+INSERT INTO products (productNombre, productPrecio, productDescripcion, productImagen, userId) VALUES
+('River Plate Local 1986', '$60.000', 'Remera Local del Club Atletico River Plate del año 1986', 'river86.png', 2),
+('Boca Juniors Local 2003', '$60.000', 'Remera Local del Club Atletico Boca Juniors del año 2003', 'boca03.png', 1),
+('Barcelona Visitante 2011', '$55.000', 'Remera Visitante del Fútbol Club Barcelona del año 2011', 'barca11.png', 3),
+('Bayern Munich Alternativa 1998', '$70.000', 'Remera Alternativa del Fußball-Club Bayern München del año 1998', 'bayern98.png', 2),
+('Real Madrid Local 2000', '$65.000', 'Remera Local del Real Madrid Club de Fútbol del año 2000', 'madrid00.png', 5);
