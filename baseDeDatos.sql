@@ -42,12 +42,12 @@ CREATE TABLE products (
 );
 
 INSERT INTO products (nombre, precio, descripcion, imagen, userId) VALUES
-('River Plate Local 1996', '$60.000', 'Remera Local del Club Atletico River Plate del año 1996', 'river96.jpg', 2),
-('Boca Juniors Local 2000', '$60.000', 'Remera Local del Club Atletico Boca Juniors del año 2000', 'boca00.jpg', 1),
-('Barcelona Visitante 2011', '$55.000', 'Remera Visitante del Fútbol Club Barcelona del año 2011', 'barca11.jpg', 3),
-('Bayern Munich Alternativa 1998', '$70.000', 'Remera Alternativa del Fußball-Club Bayern München del año 1998', 'bayern98.jpg', 2),
-('Real Madrid Local 2005', '$65.000', 'Remera Local del Real Madrid Club de Fútbol del año 2005', 'madrid05.jpg', 5),
-('Argentina Visitante 1994', '$75.000', 'Remera Visitante de la Seleccion Argentina de Fútbol del año 1994', 'argentina94.jpg', 4),
-('Brasil Local 2002', '$70.000', 'Remera Local de la Seleccion de Fútbol de Brasil del año 2002', 'brasil02.jpg', 3),
-('Chelsea Local 2007', '$60.000', 'Remera Local del Chelsea Football Club del año 2007', 'chelsea07.jpg', 2),
-('Manchester United Visitante 1990', '$70.000', 'Remera Visitante del Manchester United Football Club del año 1990', 'manunited90.jpg', 1);
+('River Plate Local 1996', '60000', 'Remera Local del Club Atletico River Plate del año 1996', 'river96.jpg', 2),
+('Boca Juniors Local 2000', '60000', 'Remera Local del Club Atletico Boca Juniors del año 2000', 'boca00.jpg', 1),
+('Barcelona Visitante 2011', '55000', 'Remera Visitante del Fútbol Club Barcelona del año 2011', 'barca11.jpg', 3),
+('Bayern Munich Alternativa 1998', '70000', 'Remera Alternativa del Fußball-Club Bayern München del año 1998', 'bayern98.jpg', 2),
+('Real Madrid Local 2005', '65000', 'Remera Local del Real Madrid Club de Fútbol del año 2005', 'madrid05.jpg', 5),
+('Argentina Visitante 1994', '75000', 'Remera Visitante de la Seleccion Argentina de Fútbol del año 1994', 'argentina94.jpg', 4),
+('Brasil Local 2002', '70000', 'Remera Local de la Seleccion de Fútbol de Brasil del año 2002', 'brasil02.jpg', 3),
+('Chelsea Local 2007', '60000', 'Remera Local del Chelsea Football Club del año 2007', 'chelsea07.jpg', 2),
+('Manchester United Visitante 1990', '70000', 'Remera Visitante del Manchester United Football Club del año 1990', 'manunited90.jpg', 1);

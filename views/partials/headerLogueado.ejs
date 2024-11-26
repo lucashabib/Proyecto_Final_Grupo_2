@@ -30,24 +30,24 @@
 
         <nav class="main-navbarLogin">
             <div>
-                <li><a href="/products/add">Agregar productos</a></li>
+                <li><a href="/products/add" class="texto_header">Agregar productos</a></li>
             </div>
             <div>
-				<li><a href="/products/">Todos los productos</a></li>
+				<li><a href="/products/" class="texto_header">Todos los productos</a></li>
 			</div>
             <div>
                 <li class="saludo">
-                    <strong><p>Bienvenido <%= user.nombre %>! </p></strong>
+                    <strong><p class="texto_header">Bienvenido <%= user.nombre %>! </p></strong>
                 </li>
             </div>
             <div>
                 <li class="perfil">
-                    <li><a href="/users/perfil">Mi Perfil</a></li>
+                    <li><a href="/users/perfil" class="texto_header">Mi Perfil</a></li>
                 </li>
             </div>
             <div>
                 <form action="/users/logout" method="POST">
-                    <button class="logout" type="submit">Cerrar sesión <i class="fas fa-sign-in-alt"></i></button>
+                    <button class="logout" type="submit" class="texto_header">Cerrar sesión <i class="fas fa-sign-in-alt"></i></button>
                 </form>
             </div>
         </nav>

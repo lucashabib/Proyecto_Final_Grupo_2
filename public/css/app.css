@@ -199,7 +199,9 @@ hr {
 .products-title {
   font-size: 2.4em;
   font-weight: 400;
-  color: var(--gray);
+  color: black;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
 }
 
 .product-box {
@@ -207,7 +209,21 @@ hr {
   border-radius: 5px;
   overflow: hidden;
   transition: 300ms;
-  margin: 20px 0;
+  margin-left: 10px;
+  height: auto;
+  width: 270px;
+}
+
+.titulo{
+  margin-top: 90px;
+  background-color: rgb(146, 0, 0);
+}
+
+.ultimos_title {
+  font-size: 60px;
+  text-align: center;
+  color: whitesmoke;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .product-box a {
@@ -228,7 +244,7 @@ hr {
 
 .product-box_data h2 {
   font-size: 2.4em;
-  font-weight: 300;
+  font-weight: bold;
   margin: 0;
   color: red;
 }
@@ -268,12 +284,19 @@ hr {
   transition: 300ms;
 }
 
+.texto_header{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
 .noproducts {
   text-align: center
 }
 
 .products-box-data {
-  background-color: red;
+  background-color: #ffffff;
 }
 
 .descripcion_data {
@@ -550,6 +573,69 @@ textarea.form-input {
   color: #fff;
 }
 
+/*Agregado Propio*/
+.help-text{
+  font-size: 15px;
+}
+
+.form{
+  font-size: 20px;
+}
+
+.input{
+  font-size: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.products-wrapper .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Espacio entre los productos */
+}
+
+.products-box {
+  flex: 1 1 calc(50% - 20px);
+  max-width: calc(50% - 20px);
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: 300ms;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.products-box-img img {
+  height: 300px; 
+  object-fit: cover;
+}
+
+.products-box-data {
+  padding: 15px;
+  text-align: left;
+}
+
+.products-box-data h2,
+.products-box-data p {
+  font-size: 1.8em;
+}
+
+.products-box-data .precio {
+  font-size: 2em;
+  font-weight: bold;
+  color: var(--green);
+}
+
+.texto_detalle{
+  font-size: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.precio_detalle{
+  font-size: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+  color: var(--green);
+  font-weight: bold;
+}
 
 /*====== Media-Queries ======*/
 @media (min-width: 768px) {

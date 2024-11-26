@@ -15,26 +15,24 @@
 				<h2 class="products-title">Resultados de búsqueda</h2>
 			</div>
 			<% for (let i = 0; i < results.length; i++) { %>
-				<div class="col-12 col-sm-6 col--lg-3">
+				<div class="col-6 col-sm-12">
 					<section class="products-box">
-						<a href="/catalogo/detalle<%= results[i].id%>">
-							<figure class="products-box-img">                        <!--ver nombre con la base de datos-->
-								<img src="/images/products/<%= results[i].imagen %>" alt="<%=results[i].nombre%>">
-							</figure>     
-							<article class="products-box-data">
-								<h2 class="descripcion_data">Producto: <%=results[i].nombre%></h2>
-								<p class="descripcion_data">Descripción: <%= results[i].descripcion %></p>
-								<p class="precio">Precio: <%= results[i].precio %></p>
-								<p><a href="/users/profile/<%= results[i].user.id %>" class="descripcion_data"> Usuario: <%= results[i].user.nombre %> </a></p>
-
-							</article>
-						</a>
+					  <a href="/products/detalle/<%= results[i].id %>">
+						<figure class="products-box-img">
+						  <img src="/images/products/<%= results[i].imagen %>" alt="<%=results[i].nombre%>">
+						</figure>     
+						<article class="products-box-data">
+						  <h2 class="descripcion_data">Producto: <%=results[i].nombre%></h2>
+						  <p class="descripcion_data">Descripción: <%= results[i].descripcion %></p>
+						  <p class="precio">Precio: $<%= results[i].precio %></p>
+						  <p><a href="/users/profile/<%= results[i].user.id %>" class="descripcion_data"> Usuario: <%= results[i].user.nombre %> </a></p>
+						</article>
+					  </a>
 					</section>
-				
+				  </div>				  
 		  <% } %>
-
-
-	<%- include('./partials/footer')  %>
+		</div>
+	</div>
 </body>
-
+	<%- include('./partials/footer')  %>
 </html>
